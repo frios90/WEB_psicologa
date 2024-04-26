@@ -12,7 +12,7 @@ body {
   font-weight: 400;
   font-size: 15px;
   line-height: 1.8;
-  color: #444; 
+  color: #444;
 }
 body * {
   font-family: "Courier New", monospace;
@@ -107,7 +107,7 @@ figure {
     margin-bottom: 2em;
     font-size: 12px;
     text-transform: uppercase; }
- 
+
   #psyco-aside #psyco-logo {
     text-align: right;
     font-weight: 700;
@@ -400,7 +400,7 @@ body.offcanvas {
       padding-bottom: 8em; } }
 .psyco-contenido {
   padding-bottom: 0em!important;
-  
+
 
 }
 
@@ -414,7 +414,7 @@ body.offcanvas {
   font-size: 18px;
   margin-bottom: 4em;
   font-weight: 700;
- 
+
   letter-spacing: 5px;
   line-height: 1.8;
   position: relative; }
@@ -1457,15 +1457,15 @@ body.offcanvas {
 .gs-span-desc{
   font-size: 16px!important;
   display: flex;
- 
+
 }
 .gs-span-desc-2{
   font-size: 16px!important;
-  display: flex;  
+  display: flex;
   font-weight: bold!important;
   text-align: justify!important;
 
- 
+
 }
 .gs-span-autor{
   font-size: 10px!important;
@@ -1585,7 +1585,7 @@ a {
 }
 .color-fff {
   color: #fff!important;
-  
+
 }
 
 .pie-p-d {
@@ -1603,7 +1603,7 @@ a {
   text-transform: initial!important;
   font-size: 45px;
   font-weight: 600;
-  
+
 }
 
 .img-noticia {
@@ -1625,4 +1625,136 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   height: 300px;
+}
+
+.click-to-chat--btn {
+	position: fixed;
+    left: 20px;
+    bottom: 20px;
+    float: none;
+    width: 50px;
+    background-color: #586d72;
+    text-align: center;
+    transition: all .4s cubic-bezier(.56,1.56,.9,.96);
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 9999;
+
+	&:hover {
+		background-color: lighten(#586d72, 10%);
+		border-radius: 20px;
+		animation: pulsecolor 1500ms infinite;
+
+		.click-text {
+			width: calc(100% - 50px);
+			display: block;
+			animation: fader 600ms forwards;
+		}
+
+		.svg-container {
+			width: 50px;
+
+			svg {
+				fill: #586d72;
+				animation: pulsecolor 1800ms cubic-bezier(.56, 1.56, .9, .96) infinite;
+
+			}
+		}
+	}
+
+	&.message-1 {
+		&:hover {
+			width: 240px;
+		}
+
+		.click-text div {
+			&.message-1-text {
+				display: block;
+			}
+		}
+
+		.svg-container .chat-icon {
+			font-size: 35px;
+			color: white;
+			margin-top: 4px;
+			display: block;
+		}
+	}
+
+	&.message-2 {
+		&:hover {
+			width: 160px;
+		}
+
+		.svg-container .chat-icon {
+			top: 12px;
+			left: 10px;
+			max-width: 28px;
+			display: none;
+		}
+	}
+
+	.click-text {
+		float: left;
+		height: 50px;
+		text-align: right;
+		display: none;
+
+		.message-1-text {
+			position: relative;
+			top: 4px;
+			margin-right: 2px;
+			font-family: Arial, serif;
+			font-size: 14px;
+			font-weight: 500;
+			line-height: 125%;
+			color: white;
+			display: none;
+
+			span {
+				float: right;
+				clear: both;
+
+				&:first-child {
+					font-size: 11px;
+					font-weight: bold;
+					text-transform: uppercase;
+				}
+
+				&:last-child {
+					font-size: 12px;
+					font-weight: 500;
+					color: white;
+					margin-top: 13px;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+
+	.svg-container {
+		float: left;
+		width: 50px;
+		height: 50px;
+
+		.chat-icon {
+			display: none;
+		}
+
+		svg {
+			position: relative;
+			fill: #FFFFFF;
+		}
+	}
+}
+
+@keyframes fader {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes pulsecolor {
+	0% { fill: #FFFFFF; }
+	50% { fill: #586d72; }
+	100% { fill: #FFFFFF; }
 }
